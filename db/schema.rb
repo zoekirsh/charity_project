@@ -12,17 +12,18 @@
 
 ActiveRecord::Schema.define(version: 3) do
 
-  create_table "categories", force: :cascade do |t|
-    t.integer "charity_category_id"
-    t.string "category_name"
+  create_table "activities", force: :cascade do |t|
+    t.integer "charity_activity_id"
+    t.string "activity_desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "charities", force: :cascade do |t|
-    t.integer "charity_category_id"
-    t.string "name"
+    t.integer "charity_activity_id"
     t.integer "ein"
+    t.string "name"
+    t.string "category"
     t.string "state"
     t.integer "gross_fundraising"
     t.integer "management_fees"
@@ -31,9 +32,9 @@ ActiveRecord::Schema.define(version: 3) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "charity_categories", force: :cascade do |t|
+  create_table "charity_activities", force: :cascade do |t|
     t.integer "charity_id"
-    t.integer "category_id"
+    t.integer "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,3 +1,3 @@
 class Charity < ActiveRecord::Base
-    has_many :categories, :through => :charity_categories
+    has_many :activities, :through => :charity_activities
 end
