@@ -20,9 +20,4 @@ class GetRequester
         JSON.parse(self.get_response_body)
     end
 
-    # def get_data
-    #     self.parse_json["data"]
-    # end
-
-
 end

@@ -2,7 +2,6 @@ class CreateCharities < ActiveRecord::Migration[5.2]
 
     def change
         create_table :charities do |t|
-            t.integer :charity_activity_id
             t.integer :ein
             t.string :name
             t.string :category

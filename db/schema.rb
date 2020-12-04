@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 4) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer "charity_activity_id"
-    t.string "activity_desc"
+    t.string "activity_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "charities", force: :cascade do |t|
-    t.integer "charity_activity_id"
     t.integer "ein"
     t.string "name"
     t.string "category"
@@ -30,6 +28,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.boolean "accepting_donations"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "legal_fees"
   end
 
   create_table "charity_activities", force: :cascade do |t|
