@@ -1,6 +1,7 @@
 require_relative 'config/environment.rb'
 require_relative 'lib/get_requester.rb'
 require_relative 'app/charity_controller.rb'
+require_relative 'app/models/charity.rb'
 require "sinatra/activerecord/rake"
 require 'active_record'
 
