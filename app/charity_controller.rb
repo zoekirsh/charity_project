@@ -37,7 +37,7 @@ def populateCharityFinancial
   end
 end
 
-#########################
+
   #Is there a better way to reorder this hash by value?
   def categoriesAndCount
     catHash = Hash.new(0)
