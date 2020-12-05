@@ -11,6 +11,8 @@ end
 def run
   welcome
   state = get_state
+  puts "State successfully set to #{state}."
+  puts "-------------------------------------"
   puts "Type 'menu' for a list of possible commands:"
   user_input = gets_input
 
@@ -21,11 +23,13 @@ def run
       user_input = gets_input
     when "change state" then
       state = get_state
+      puts "State successfully changed to #{state}!"
+      user_input = gets_input
     when "1" then 
-      categoriesAndCount
+      pp categoriesAndCount
       user_input = gets_input
     when "2" then 
-      charities_in(state)
+      puts charities_in(state)
       user_input = gets_input
     else puts "Please enter a valid command:"
       user_input = gets_input
@@ -35,26 +39,29 @@ def run
 end
 
 def gets_input
+  puts "-------------------------------------"
   puts "Please enter a command:"
-  gets.chomp
+  STDIN.gets.chomp
 end
 
 def get_state
   puts "Please enter a state:"
-  state = gets.chomp
+  state = STDIN.gets.chomp
   until statesAndCount.map {|s| s[0]}.include?(state)
-    puts "Invalid input. Check your spelling and try again!"
-    state = gets.chomp
+    puts "State not represented or incorrect spelling. Please try again!"
+    state = STDIN.gets.chomp
   end
   state
 end
 
 def menu
+  puts "-------------------------------------"
   puts "Interested in a different state? Type 'change state'."
   # puts "Type 'national' for commands comparing states."
   # puts "Type 'state' for commands inquiring within a specific state."
   # puts "Type 'financial' for commands relating to finance."
-  puts "Type '1' for categoriesAndCount"
+  puts "Type '1' for a list of all types of Non-Profits with their organization count"
+  puts "Type '2' for a list of Non-Profits in your chosen state"
 end
 
-run
+# run
