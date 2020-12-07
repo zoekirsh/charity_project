@@ -1,10 +1,11 @@
+require 'active_record'
+require_relative 'app/run.rb'
 require_relative 'config/environment.rb'
 require_relative 'lib/get_requester.rb'
 require_relative 'app/charity_controller.rb'
-require_relative 'app/run.rb'
 require_all 'app/models'
 require "sinatra/activerecord/rake"
-require 'active_record'
+
 
 task :environment do
   ENV["ACTIVE_RECORD_ENV"] ||= "development"
