@@ -27,6 +27,6 @@ task :console => :environment do
   Pry.start
 end 
 
-task :run => :environment do
-  run
-end
+# task :run => :environment do
+#   run
+# end
