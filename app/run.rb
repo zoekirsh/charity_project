@@ -86,7 +86,16 @@ def run
       puts percentage_of_income_for(p1)
       user_input = gets_input
     when "18" then
-
+      puts nice(sum_of_legal_fees_by_category)
+      user_input = gets_input
+    when "19" then
+      puts nice(avg_legal_fees_by_category)
+      user_input = gets_input
+    when "20" then
+      puts nice(sum_of_mgmnt_fees_by_category)
+      user_input = gets_input
+    when "21" then
+      puts nice(avg_mgmnt_fees_by_category)
       user_input = gets_input
     else puts "Please enter a valid command:"
       user_input = gets_input
@@ -117,6 +126,10 @@ def menu
   puts "Type '15' for the rank by income for an activity in your chosen state"
   puts "Type '16' for the sum of incomes associated with each activity"
   puts "Type '17' for the percentage of Non-Profit income associated with an activity"
+  puts "Type '18' for the sum of legal fees by category"
+  puts "Type '19' for the average legal fee by category"
+  puts "Type '20' for the sum of management fees by category"
+  puts "Type '21' for the average management fee by category"
   puts "Interested in a different state? Type 'change state'."
   puts "Type 'quit' any time to exit program."
 end
