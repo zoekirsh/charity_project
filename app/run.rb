@@ -28,73 +28,112 @@ def run
       puts "State successfully changed to #{state}!"
       user_input = gets_input
     when "1" then 
+      puts "These are all the different categories of Non-Profits with the number of organizations belonging to each category:"
+      puts "-------------------"
       pp categoriesAndCount
       user_input = gets_input
     when "2" then
       p1 = how_many
+      puts "Here are the #{p1} most common Non-Profit categories:"
       pp x_most_common_categories(p1)
       user_input = gets_input
     when "3" then
+      puts "These are all the different activities a Non-Profit can participate in, with a count of how many organizations engage in each activity:"
+      puts "-------------------"
       pp activitiesAndCount
       user_input = gets_input
     when "4" then
       p1 = how_many
+      puts "These are the #{p1} most common Non-Profit activities:"
+      puts "-------------------"
       pp x_most_common_activities(p1)
       user_input = gets_input
     when "5" then
+      puts "Here are all the Non-Profits in each state:"
+      puts "-------------------"
       pp statesAndCount
       user_input = gets_input
     when "6" then
       p1 = how_many
+      puts "These are the #{p1} states with the most Non-Profits:"
+      puts "-------------------"
       pp x_states_with_most_charities(p1)
       user_input = gets_input
     when "7" then 
+      puts "These are all the Non-Profits in #{state}:"
+      puts "-------------------"
       pp charity_names_in(state)
       user_input = gets_input
     when "8" then
+      puts "In #{state}, these are all the Non-Profit categories and how many organizations they have:"
+      puts "-------------------"
       pp charity_categories_in(state)
       user_input = gets_input
     when "9" then
+      puts "In #{state}, these are all the Non-Profit activities and how many organizations participate:"
+      puts "-------------------"
       pp charity_activities_in(state)
       user_input = gets_input
     when "10" then
+      puts "Here is the cumulative income of all the Non-Profits in each state:"
+      puts "-------------------"
       puts nice(total_income_per_state)
       user_input = gets_input
     when "11" then
+      puts "Here is the average income for a Non-Profit in each state:"
+      puts "-------------------"
       puts nice(avg_incomes)
       user_input = gets_input
     when "12" then
+      puts "#{state} is ranked the following for Non-Profit average income:"
+      puts "-------------------"
       puts rank_by_avg_income(state)
       user_input = gets_input
     when "13" then
       p1 = which_activity
+      puts "Here is the total income for the activity '#{p1}' by state:"
+      puts "-------------------"
       puts nice(total_income_for_activity_by_state(p1))
       user_input = gets_input
     when "14" then
       p1 = which_activity
+      puts "This is the state with the highest income for the activity '#{p1}':"
+      puts "-------------------"
       puts state_with_highest_income_for(p1)
       user_input = gets_input
     when "15" then
       p1 = which_activity
+      puts "-------------------"
       puts rank_by_income_for_activity_by(state, p1)
       user_input = gets_input
     when "16" then
+      puts "Here are all the Non-Profit activities with the sum of income that is related to each:"
+      puts "-------------------"
       puts nice(sum_of_activity_incomes_array)
       user_input = gets_input
     when "17" then
       p1 = which_activity
-      puts percentage_of_income_for(p1)
+      puts "-------------------"
+      puts "#{percentage_of_income_for(p1)} of national Non-Profit income is allocated to the activity '#{p1}'"
       user_input = gets_input
     when "18" then
+      puts "The legal fees for all Non-Profits belonging to each category are the following:"
+      puts "-------------------"
       puts nice(sum_of_legal_fees_by_category)
       user_input = gets_input
     when "19" then
+      puts "Here are all the Non-Profit categories with their average legal fee:"
+      puts "-------------------"
       puts nice(avg_legal_fees_by_category)
       user_input = gets_input
     when "20" then
+      puts "The management fees for all Non-Profits belonging to each category are the following:"
+      puts "-------------------"
       puts nice(sum_of_mgmnt_fees_by_category)
       user_input = gets_input
     when "21" then
+      puts "Here are all the Non-Profit categories with their average management fee:"
+      puts "-------------------"
       puts nice(avg_mgmnt_fees_by_category)
       user_input = gets_input
     else puts "Please enter a valid command:"
