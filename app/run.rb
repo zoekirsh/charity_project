@@ -141,7 +141,6 @@ def which_activity
   activity
 end
 
-#print (not puts) on 44 so the gets is on same line
 def gets_input
   puts "-------------------------------------"
   p "Please enter a command:"

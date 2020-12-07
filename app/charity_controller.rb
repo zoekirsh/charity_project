@@ -179,13 +179,13 @@ def rank_by_income_for_activity_by(state, activity)
   end
   "Sorry, #{activity} not found in #{state}."
 end
-
+#16
 def sum_of_activity_incomes_array
   actIncomes = []
   Activity.all.each {|a| actIncomes << [a.activity_name, a.income_sum] }
   actIncomes
 end
-
+#17
 def percentage_of_income_for(activity)
   actIncomes = []
 
@@ -197,4 +197,34 @@ def percentage_of_income_for(activity)
       return "#{((actIncomes[i][1]/totalIncome.to_f)*100).round(2)}%"
     end
   end
+end
+#18, call with nice
+def sum_of_legal_fees_by_category
+  catLegalFees = Hash.new(0)
+  Charity.all.each {|charity| catLegalFees[charity.category] += charity.legal_fees}
+  catLegalFees.sort_by{|k, v| v}.reverse
+end
+#19, call with nice
+def avg_legal_fees_by_category
+  avgLegalFees = Hash.new(0)
+  sum_of_legal_fees_by_category.each do |c|
+    catCount = categoriesAndCount.find {|a| a[0] == c[0]}[1]
+    avgLegalFees[c[0]] = c[1]/catCount
+  end
+  avgLegalFees.sort_by{|k, v| v}.reverse
+end
+#20, call with nice
+def sum_of_mgmnt_fees_by_category
+  catMgmntFees = Hash.new(0)
+  Charity.all.each {|charity| catMgmntFees[charity.category] += charity.management_fees}
+  catMgmntFees.sort_by{|k, v| v}.reverse
+end
+#21, call with nice
+def avg_mgmnt_fees_by_category
+  avgMgmntFees = Hash.new(0)
+  sum_of_mgmnt_fees_by_category.each do |c|
+    catCount = categoriesAndCount.find {|a| a[0] == c[0]}[1]
+    avgMgmntFees[c[0]] = c[1]/catCount
+  end
+  avgMgmntFees.sort_by{|k, v| v}.reverse
 end
