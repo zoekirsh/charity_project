@@ -169,6 +169,3 @@ def get_state
   end
   state
 end
-
-
-# run
